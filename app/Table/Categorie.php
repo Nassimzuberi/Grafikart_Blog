@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: USER
- * Date: 13/08/2019
- * Time: 11:59
- */
+namespace App\Table;
+use App\App;
+class Categorie extends Table{
+public static $table = 'categorie';
+        public function getUrl(){
+            return 'index.php?p=categorie&id='. $this->id;
+        }
+}
+
+?>
