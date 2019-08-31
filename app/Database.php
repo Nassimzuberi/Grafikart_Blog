@@ -23,9 +23,14 @@ class Database{
         return $pdo;
     }
 
-    public function query($statement, $class_name){
+    public function query($statement, $class_name,$one = false){
         $res = $this->getPDO()->query($statement);
-        $datas = $res->fetchAll(PDO::FETCH_CLASS,$class_name);
+        $res->setFetchMode(PDO::FETCH_CLASS,$class_name);
+        if($one){
+            $datas = $res->fetch();
+        }else{
+            $datas = $res->fetchAll();
+        }
         return $datas;
     }
 

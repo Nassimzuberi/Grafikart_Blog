@@ -1,7 +1,7 @@
 
 <div class="row">
     <div class="col-sm-8">
-        <?php foreach(App\Table\Article::getLast() as $post): ?>
+        <?php foreach(App\Table\Articles::getLast() as $post): ?>
             <h2>
                 <a href="<?= $post->url ; ?>"><?= $post->titre ; ?></a>
             </h2>
