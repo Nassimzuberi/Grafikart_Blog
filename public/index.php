@@ -5,4 +5,5 @@ require '../app/Autoloader.php';
 App\Autoloader::register();
 
 $app = App\App::getInstance();
-$app->title = "Titre de test";
+
+$posts = $app->getTable('Posts');
