@@ -24,7 +24,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">POO PHP de Grafikart</a>
+            <a class="navbar-brand" href="index.php">POO PHP de Grafikart</a>
         </div>
     </div>
 </nav>

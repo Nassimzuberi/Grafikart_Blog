@@ -22,7 +22,10 @@ class Table
     }
 
     public function all(){
-        return $this->db->query('SELECT * FROM articles');
+        return $this->query('SELECT * FROM '. $this->table);
+    }
+    public function find($id){
+        return $this->query(" SELECT * from {$this->table} WHERE id = ?", [$id],true );
     }
     public function query($statement, $attributes = null, $one = false){
         if($attributes){
@@ -40,4 +43,5 @@ class Table
             );
         }
 }
+
 }
