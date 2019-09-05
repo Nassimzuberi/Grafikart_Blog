@@ -6,8 +6,8 @@
  * Time: 18:28
  */
 namespace App\Table;
-
-class PostsTable extends Table
+use \Core\Table\Table;
+class CategorieTable extends Table
 {
 
 }

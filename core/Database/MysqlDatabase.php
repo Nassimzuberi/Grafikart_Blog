@@ -1,5 +1,5 @@
 <?php
-namespace App\Database;
+namespace Core\Database;
 use \PDO;
 class MysqlDatabase extends Database{
     private $db_name;

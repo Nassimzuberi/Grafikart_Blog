@@ -1,5 +1,5 @@
 <?php
-namespace App {
+namespace Core {
 
     class Autoloader{
 
@@ -19,7 +19,7 @@ namespace App {
         {
             if(strpos($class,__NAMESPACE__.'\\') === 0) {
                 $class = str_replace(__NAMESPACE__ . '\\', '', $class);
-                require __DIR__  .'\\' . $class . '.php';
+                require __DIR__ . '\\' . $class . '.php';
             }
         }
     }

@@ -6,8 +6,9 @@
  * Time: 18:28
  */
 namespace App\Table;
+use \Core\Table\Table;
 
-class CategoriesTable extends Table
+class UserTable extends Table
 {
 
 }
