@@ -23,6 +23,9 @@ if($page === 'home'){
 }elseif($page === 'articles.show'){
     require ROOT . '/pages/posts/single.php';
 
+}elseif($page === 'login'){
+    require ROOT . '/pages/users/login.php';
+
 }
 
 $content = ob_get_clean();
