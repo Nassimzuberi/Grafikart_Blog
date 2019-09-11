@@ -16,17 +16,21 @@ if(isset($_GET['p'])){
 
 
 if($page === 'home'){
-    require ROOT . '/pages/posts/home.php';
+    $controller = new \App\Controller\PostController();
+    $controller->index();
 }elseif($page === 'articles.categorie'){
-    require ROOT . '/pages/posts/categorie.php';
+    $controller = new \App\Controller\PostController();
+    $controller->categories();
 
 }elseif($page === 'articles.show'){
-    require ROOT . '/pages/posts/single.php';
+    $controller = new \App\Controller\PostController();
+    $controller->show();
 
 }elseif($page === 'login'){
-    require ROOT . '/pages/users/login.php';
+    $controller = new \App\Controller\UsersController();
+    $controller->login();
 
 }
 
 $content = ob_get_clean();
-require ROOT . '/pages/templates/default.php';
+require ROOT . '/app/Views/templates/default.php';
