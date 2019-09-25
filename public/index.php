@@ -1,36 +1,24 @@
 <?php
 define('ROOT',dirname(__DIR__));
 require ROOT . '/app/App.php';
-
 App::load();
-
-$app = App::getInstance();
-
-ob_start();
 
 if(isset($_GET['p'])){
     $page = $_GET['p'];
 } else{
-    $page = 'home';
+    $page = 'posts.index';
 }
 
+$page = explode('.', $page);
 
-if($page === 'home'){
-    $controller = new \App\Controller\PostController();
-    $controller->index();
-}elseif($page === 'articles.categorie'){
-    $controller = new \App\Controller\PostController();
-    $controller->categories();
+if($page[0] == 'admin'){
+    $controller = '\App\Controller\Admin\\' . ucfirst($page[1]) . 'Controller';
+    $action = $page[2];
 
-}elseif($page === 'articles.show'){
-    $controller = new \App\Controller\PostController();
-    $controller->show();
-
-}elseif($page === 'login'){
-    $controller = new \App\Controller\UsersController();
-    $controller->login();
-
+}else{
+    $controller = '\App\Controller\\' . ucfirst($page[0]) . 'Controller';
+    $action = $page[1];
 }
 
-$content = ob_get_clean();
-require ROOT . '/app/Views/templates/default.php';
+$controller = new $controller();
+$controller->$action();

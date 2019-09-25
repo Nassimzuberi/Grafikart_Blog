@@ -9,9 +9,8 @@
 namespace App\Controller;
 
 use \App;
-use Core\Controller\Controller;
 
-class PostController extends AppController{
+class PostsController extends AppController{
 
     public function __construct(){
         parent::__construct();
@@ -28,7 +27,7 @@ class PostController extends AppController{
         );
     }
 
-    public function categories(){
+    public function categorie(){
         $categorie = $this->Categorie->find($_GET['id']);
         if($categorie == false){
             $this->notFound();
